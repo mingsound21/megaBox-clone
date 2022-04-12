@@ -1,0 +1,79 @@
+/* 레이아웃 */
+#header {
+    width: 100%; 
+    height: 63px;
+    border-bottom: 1px solid #c6c6c6;
+}
+
+/* 가운데 영역 */
+.container {
+    position: relative; /*기준점을 항상 1662?*/
+    width : 1280px;
+    margin : 0 auto; /* 좌우 여백 사이즈 동일 = 가운데 위치시키기 */
+    background: rgba(0,0,0,0);
+}
+
+/* 로우 영역 */
+.row{
+    padding: 0 24px;
+}
+
+/* 헤더 영역 */
+
+.header h1{ 
+    float: left;
+}
+.header h1 em{  
+    padding: 15px 8px 5px 0;
+    display: inline-block; /*inline - 가로 정렬, block - padding값 적용*/
+}
+.header h1 em img{ 
+    width: 155px;
+}
+.header h1 strong{
+    display: block;
+    position: absolute; 
+    /*반응형으로 만들다보면 position바뀌어서 이렇게 한듯
+    position 사용시 영역 사라짐 문제 발생*/
+    left: 194px;
+    top: 23px;
+}
+.header h1 strong img{
+    width: 126px;
+}
+.header .nav {
+    float: right;
+}
+.nav ul{
+    border-left: 1px solid #c6c6c6;
+}
+.header .nav ul li {
+    float:left;
+    width: 103px;
+    text-align: center;
+    border-right: 1px solid #c6c6c6;
+}
+.header .nav ul li a{
+    display: block;
+    padding: 22px 10px;
+    font-size: 17spx;
+    font-weight: 700;
+    color: #444;
+}
+
+/*
+float을 사용한 상위박스의 height 값이 0으로 설정. 즉 영역이 사라짐 
+-> 해결책
+1) 똑같이 상위 박스도 float사용(비추)
+2) clear:both를 사용(비추)
+3) 상위 박스에게 overflow:hidden을 사용
+4) clearfix를 만들어 사용 (아주추천)
+.clearfix:before, .clearfix:after{
+    display: block;
+    content:'';
+    line-height: 0;
+}
+.clearfix:after{
+    clear:both;
+}
+*/
